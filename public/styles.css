@@ -1,0 +1,38 @@
+:root {
+  --bg: #06090f;
+  --panel: #0b1320;
+  --line: #1f4f49;
+  --neon: #00ff9f;
+  --blue: #2cd6ff;
+  --danger: #ff4b67;
+}
+* { box-sizing: border-box; font-family: "Courier New", monospace; }
+body { margin: 0; background: radial-gradient(circle at top,#0f1d2f,var(--bg)); color: #d7ffec; }
+.screen-noise { position: fixed; inset: 0; pointer-events: none; background: repeating-linear-gradient(transparent 0 2px, rgba(255,255,255,.02) 3px 4px); }
+.topbar { display: grid; grid-template-columns: 1fr auto auto; gap: 1rem; align-items: center; padding: .8rem 1rem; border-bottom: 1px solid #123; }
+h1 { margin: 0; color: var(--neon); text-shadow: 0 0 12px rgba(0,255,159,.6); }
+.status-bar { display: flex; gap: 1rem; color: var(--blue); font-weight: bold; }
+.progress-wrap { display: grid; gap: .2rem; min-width: 260px; }
+#levelProgress { height: 10px; background: #112; border-radius: 10px; overflow: hidden; }
+#levelProgress span { display: block; height: 100%; width: 33%; background: linear-gradient(90deg,var(--neon),var(--blue)); transition: width .4s; }
+.container { max-width: 1180px; margin: auto; padding: 1rem; }
+.grid { display: grid; grid-template-columns: 340px 1fr; gap: 1rem; }
+.panel { background: rgba(4,16,26,.75); border: 1px solid var(--line); border-radius: 10px; padding: 1rem; box-shadow: 0 0 20px rgba(0,255,159,.13); }
+.center { max-width: 430px; margin: 5rem auto; }
+.hidden { display: none; }
+input, textarea, select, button { width: 100%; margin: .35rem 0; padding: .62rem; background: #05121d; color: #dbffee; border: 1px solid #2a5f58; }
+textarea { resize: vertical; }
+button { cursor: pointer; background: linear-gradient(90deg,#045c48,#05487a); font-weight: bold; }
+button.danger { background: linear-gradient(90deg,#7f1736,#4f0c22); border-color: #8c2941; }
+table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+th, td { border-bottom: 1px dashed #1b4a46; padding: .3rem; text-align: left; }
+#code { color: #8dffcc; background: #031019; }
+.mission-head { display: flex; justify-content: space-between; align-items: center; gap: .8rem; }
+.result { min-height: 1.2rem; font-weight: bold; }
+.admin-grid { display: grid; grid-template-columns: repeat(2, minmax(220px,1fr)); gap: 1rem; }
+pre { max-height: 220px; overflow: auto; background: #041019; padding: .7rem; border: 1px solid #224; }
+.muted { opacity: .72; font-size: .85rem; }
+@media (max-width: 900px) {
+  .grid, .admin-grid { grid-template-columns: 1fr; }
+  .topbar { grid-template-columns: 1fr; }
+}
