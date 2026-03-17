@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hack & Crack</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="screen-noise"></div>
+  <header class="topbar">
+    <h1>HACK & CRACK</h1>
+    <div class="status-bar">
+      <span id="roundStatus">Round: idle</span>
+      <span id="timer">00:00</span>
+    </div>
+    <div class="progress-wrap">
+      <span>LEVEL PROGRESS</span>
+      <div id="levelProgress"><span></span></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="loginCard" class="panel center">
+      <h2>ACCESS TERMINAL</h2>
+      <input id="username" placeholder="Username" autocomplete="off" />
+      <input id="password" type="password" placeholder="Password" />
+      <button id="loginBtn">Login</button>
+      <p class="muted">Default admin: <code>admin / admin123</code></p>
+    </section>
+
+    <section id="app" class="hidden">
+      <div class="grid">
+        <aside class="panel">
+          <h3>Operative Profile</h3>
+          <div id="profile"></div>
+          <button id="startMissionBtn">Start Mission</button>
+          <button id="logoutBtn" class="danger">Logout</button>
+        </aside>
+
+        <section class="panel">
+          <h3>Live Leaderboard</h3>
+          <table id="leaderboard"></table>
+        </section>
+      </div>
+
+      <section id="missionPanel" class="panel hidden">
+        <div class="mission-head">
+          <h3 id="missionTitle">Mission Console</h3>
+          <select id="language">
+            <option value="python">Python</option>
+            <option value="javascript">JavaScript</option>
+            <option value="c">C</option>
+            <option value="cpp">C++</option>
+            <option value="java">Java</option>
+          </select>
+        </div>
+        <div id="question"></div>
+        <textarea id="code" rows="13" spellcheck="false" placeholder="// Write your exploit code here..."></textarea>
+        <button id="submitBtn">Run Hidden Tests</button>
+        <p id="result" class="result"></p>
+      </section>
+
+      <section id="adminPanel" class="panel hidden">
+        <h3>Admin Panel</h3>
+        <div class="admin-grid">
+          <div>
+            <h4>Round Control</h4>
+            <button id="startRoundBtn">Start Level 1 (20m)</button>
+            <button id="stopRoundBtn" class="danger">Stop Round</button>
+          </div>
+          <div>
+            <h4>Generate Users</h4>
+            <input id="userPrefix" placeholder="prefix" value="cadet" />
+            <input id="userCount" type="number" value="5" min="1" max="100" />
+            <button id="generateUsersBtn">Generate Credentials</button>
+          </div>
+          <div>
+            <h4>Add Question</h4>
+            <input id="qTitle" placeholder="Title" />
+            <select id="qLevel"><option>1</option><option>2</option><option>3</option></select>
+            <select id="qType"><option>DSA</option><option>Scenario</option></select>
+            <textarea id="qStatement" rows="4" placeholder="Problem statement"></textarea>
+            <input id="qSampleIn" placeholder="Sample input" />
+            <input id="qSampleOut" placeholder="Sample output" />
+            <textarea id="qTests" rows="3" placeholder='Testcases JSON [{"input":"1 2","output":"3"}]'></textarea>
+            <button id="addQuestionBtn">Add Question</button>
+          </div>
+          <div>
+            <h4>Submissions / Export</h4>
+            <button id="loadSubmissionsBtn">View Submissions</button>
+            <button id="exportBtn">Export CSV</button>
+          </div>
+        </div>
+        <pre id="adminOut"></pre>
+      </section>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
