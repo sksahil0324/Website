@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hack & Crack</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <header class="topbar">
+    <div>
+      <h1>HACK <span>&</span> CRACK</h1>
+      <p class="tag">Cyber Coding Arena</p>
+    </div>
+    <div class="hud">
+      <div id="roundStatus">Round: idle</div>
+      <div id="timer">00:00</div>
+      <div class="bar"><span id="levelFill"></span></div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="loginCard" class="card login-card">
+      <h2>Authenticate Operative</h2>
+      <p class="muted">Use the credentials provided by your event admin.</p>
+      <input id="username" placeholder="Username" autocomplete="off" />
+      <input id="password" type="password" placeholder="Password" />
+      <button id="loginBtn">ENTER GRID</button>
+      <p id="loginMsg" class="error"></p>
+    </section>
+
+    <section id="app" class="hidden">
+      <div class="layout">
+        <aside class="card">
+          <h3>Agent Profile</h3>
+          <div id="profile"></div>
+          <button id="startMissionBtn">Start Mission</button>
+          <button id="logoutBtn" class="danger">Logout</button>
+        </aside>
+
+        <section class="card">
+          <h3>Live Leaderboard</h3>
+          <table id="leaderboard"></table>
+        </section>
+      </div>
+
+      <section id="missionPanel" class="card hidden">
+        <div class="mission-head">
+          <h3 id="missionTitle">Mission Console</h3>
+          <select id="language">
+            <option value="python">Python</option>
+            <option value="javascript">JavaScript</option>
+            <option value="c">C</option>
+            <option value="cpp">C++</option>
+            <option value="java">Java</option>
+          </select>
+        </div>
+        <div id="question"></div>
+        <textarea id="code" rows="14" spellcheck="false" placeholder="// Write your solution here..."></textarea>
+        <button id="submitBtn">Run Hidden Tests</button>
+        <p id="result" class="result"></p>
+      </section>
+
+      <section id="adminPanel" class="card hidden">
+        <h3>Admin Controls</h3>
+        <div class="admin-grid">
+          <div>
+            <h4>Round Control</h4>
+            <button id="startRoundBtn">Start Level 1 (20m)</button>
+            <button id="stopRoundBtn" class="danger">Stop Round</button>
+          </div>
+          <div>
+            <h4>Participants</h4>
+            <input id="userPrefix" value="cadet" placeholder="username prefix" />
+            <input id="userCount" type="number" value="5" min="1" max="100" />
+            <button id="generateUsersBtn">Generate Credentials</button>
+          </div>
+        </div>
+        <pre id="adminOut"></pre>
+      </section>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
